@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+  <file name="NASAarchiveLogo.jpg" source="original">
+    <size>38366</size>
+    <format>Collection Header</format>
+    <mtime>1236194645</mtime>
+    <md5>64dcc1092df36142eb4aab7cc255a4a6</md5>
+    <crc32>c554eac4</crc32>
+    <sha1>e1c225a0d37282f08685905a4ba1c5d7aec5fa64</sha1>
+    <rotation>0</rotation>
+  </file>
+  <file name="__ia_thumb.jpg" source="original">
+    <mtime>1530756295</mtime>
+    <size>5374</size>
+    <md5>c354f821954f80516d163c23135e7dd7</md5>
+    <crc32>99715511</crc32>
+    <sha1>91ed7946b18e28692338feb12cff9af2f22f74b4</sha1>
+    <format>JPEG Thumb</format>
+    <rotation>0</rotation>
+  </file>
+  <file name="globe_west_540.jpg" source="original">
+    <size>66065</size>
+    <format>JPEG</format>
+    <mtime>1245274910</mtime>
+    <md5>9366a4b09386bf673c447e33d806d904</md5>
+    <crc32>2283b5fd</crc32>
+    <sha1>3e20a009994405f535cdf07cdc2974cef2fce8f2</sha1>
+    <rotation>0</rotation>
+  </file>
+  <file name="globe_west_540_thumb.jpg" source="derivative">
+    <format>JPEG Thumb</format>
+    <original>globe_west_540.jpg</original>
+    <mtime>1429559131</mtime>
+    <size>6168</size>
+    <md5>d3dab682c56058c8af0df5a2073b1dd1</md5>
+    <crc32>20f2f8e7</crc32>
+    <sha1>b11e354033d8c6bcc281ddee40a80041af7a09bb</sha1>
+  </file>
+  <file name="nasa_archive.torrent" source="metadata">
+    <btih>63c5d43a523fb05bc8b7cff4f65056a5609da855</btih>
+    <mtime>1547529123</mtime>
+    <size>1892</size>
+    <md5>417028f5c59bf769abd9a99a067d4378</md5>
+    <crc32>e3c61282</crc32>
+    <sha1>effd4e428aede1e5327fc84a6131c9c95674d420</sha1>
+    <format>Archive BitTorrent</format>
+  </file>
+  <file name="nasa_files.xml" source="metadata">
+    <format>Metadata</format>
+    <md5>91c1cc856a7c5855d67fa9dd0b984fbd</md5>
+  </file>
+  <file name="nasa_meta.xml" source="metadata">
+    <size>7842</size>
+    <format>Metadata</format>
+    <mtime>1547529123</mtime>
+    <md5>aa28de6a6820a73f569ec5ac40434fc7</md5>
+    <crc32>c11f0c69</crc32>
+    <sha1>27138e3fa2a0dee51a43e959f8cc324e6f89f497</sha1>
+  </file>
+  <file name="nasa_reviews.xml" source="metadata">
+    <size>879</size>
+    <format>Metadata</format>
+    <mtime>1481769991</mtime>
+    <md5>711ba65d49383a25657640716c45e840</md5>
+    <crc32>c7278f7f</crc32>
+    <sha1>7df35a754fd6bb1874f527907e2521534ff08aaa</sha1>
+  </file>
+</files>

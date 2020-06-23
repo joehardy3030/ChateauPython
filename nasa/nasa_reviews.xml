@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews itemIdentifier="nasa">
+  <review>
+    <reviewbody>Even though the title of this is "NASA Images", it is intentionally part of the Moving Image Archive, not the Images collection, according to what I was told by IA staff. In case others are confused by this, I thought it worth mentioning in a review.
+------
+Here are some (currently one) links related to the project, that could be added to the description:
+
+https://archive.org/post/144937/nasa-and-internet-archive-team-to-digitize-space-imagery</reviewbody>
+    <reviewtitle>Inclusion in Images collection</reviewtitle>
+    <reviewer>Jesse_W</reviewer>
+    <reviewdate>2016-12-15 02:46:27</reviewdate>
+    <createdate>2015-09-01 05:32:25</createdate>
+    <stars>0</stars>
+  </review>
+  <info>
+    <num_reviews>1</num_reviews>
+    <avg_rating>0</avg_rating>
+  </info>
+</reviews>
