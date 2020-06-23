@@ -1,0 +1,55 @@
+Grateful Dead
+Nassau Veterans Memorial Coliseum
+Uniondale, NY
+
+March 30, 1990
+
+24-track master (presumably ADAT) > 
+2-track mixdown > DAT > Cass > PCM > CD
+
+
+Set 1:
+
+Disc 1
+
+Help on the Way >
+Slipknot > 
+Franklin's Tower
+Little Red Rooster
+Dire Wolf
+It's All Over Now
+Tom Thumb's Blues
+Picasso Moon
+Don't Ease Me In
+
+Set 2
+Disc 2
+Aiko Aiko
+Playin' in the Band >
+China Doll >
+Uncle John's Band > 
+Terrapin Station >
+Drumz > 
+
+Disc 3
+Space >
+I Need a Miracle >
+Gimme Some Lovin' >
+Standing on the Moon >
+Not Fade Away
+Encore:
+Attics of My Life
+
+EAC>SHN transfer by Steve Barbella
+seeded Feb '02
+
+EAC Test and Copy, offsets config'd, no errors, 100% all tracks
+shns via MKW v.97, seek enabled
+sector boundaries confirmed via shntool
+
+
+
+
+
+
+

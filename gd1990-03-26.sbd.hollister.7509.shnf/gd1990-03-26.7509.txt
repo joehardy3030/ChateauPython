@@ -1,0 +1,39 @@
+The Grateful Dead
+3-26-1990
+Knickerbocker Arena, Albany, NY
+Source : SBD>24 Track Mixdown>DAT>C>PCM>FC/DD2496>CD
+EAC Secure Mode w/correct offest>Plextor SCSI 40X>MKW>SHN
+
+Disc 1
+Set1
+Hell In A Bucket
+Dupree's Diamond Blues
+A Little Light
+Black Throated Wind
+Big Railroad Blues
+Picasso Moon
+Row Jimmy
+Blow Away
+Set 2
+Built To Last
+
+Disc 2(Requires 80M)
+Set 2
+Victim Or The Crime
+China Cat Sunflower > 
+I Know You Rider > 
+Women Are Smarter > 
+Drums > Jam > 
+I Need A Miracle
+Dear Mr. Fantasy > 
+Gimme Some Lovin' >
+Morning Dew
+
+E: Brokedown Palace
+
+Comments :
+The FC/DD2496 refers to the A/D transfer.  The FC is a Flying Calf external 
+24-bit A/D converter.  This provided the A/D conversion (@ 44.1KHz) which was 
+then fed into my Delta DiO 2496 soundcard.  Minor Editing done in Sound Forge
+Transfer and Mastering by David Hollister
+SHN Conversion by Brian Voelz 
