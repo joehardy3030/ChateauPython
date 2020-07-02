@@ -50,6 +50,7 @@ class S3Auth(AuthBase):
                                           ' Have you run `ia configure`?')
 
         auth_str = 'LOW {a}:{s}'.format(a=self.access_key, s=self.secret_key)
+        print(auth_str)
         r.headers['Authorization'] = auth_str
         return r
 
