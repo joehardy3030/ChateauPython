@@ -5,14 +5,12 @@ from typing import Optional, List, Dict
 class SearchTermsModel:
     def __init__(self, search_term: Optional[str] = None, venue: Optional[str] = None,
                  start_year: Optional[str] = None, end_year: Optional[str] = None,
-                 min_rating: Optional[str] = None, num_reviews: Optional[str] = None,
-                 sbd_only: Optional[bool] = True):
+                 min_rating: Optional[str] = None, sbd_only: Optional[bool] = True):
         self.search_term = search_term
         self.venue = venue
         self.start_year = start_year
         self.end_year = end_year
         self.min_rating = min_rating
-        self.num_reviews = num_reviews
         self.sbd_only = sbd_only
 
     def to_query(self) -> str:
@@ -34,9 +32,6 @@ class SearchTermsModel:
 
         if self.min_rating:
             query += f' AND avg_rating:[{self.min_rating} TO 5.0]'
-
-        if self.num_reviews:
-            query += f' AND num_reviews:[{self.num_reviews} TO *]'
 
         return query
 
@@ -65,7 +60,6 @@ def perform_archive_search(search_terms: SearchTermsModel) -> List[Dict[str, str
     results_list = []
     print(f"\nFound {results.num_found} results:\n")
     for item in results:
-        print(item)
         # Extract fields with default values if they are missing
         result = {
             "identifier": item.get('identifier', 'No identifier available'),
@@ -100,7 +94,6 @@ if __name__ == "__main__":
         start_year="1970",
         end_year="1971",
         min_rating="4",
-        num_reviews="1",
         sbd_only=True
     )
 
