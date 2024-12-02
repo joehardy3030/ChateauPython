@@ -44,6 +44,7 @@ class ShowMetadata:
             data = response.json()
 
             metadata = data.get('metadata', {})
+            print(metadata)
             # Extract fields from the metadata
             return cls(
                 identifier=identifier,
