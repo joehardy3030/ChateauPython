@@ -1,11 +1,11 @@
 import internetarchive
-from typing import Optional
+from typing import Optional, List, Dict
 
 
 class SearchTermsModel:
     def __init__(self, search_term: Optional[str] = None, venue: Optional[str] = None,
                  start_year: Optional[str] = None, end_year: Optional[str] = None,
-                 min_rating: Optional[str] = None, sbd_only: Optional[bool] = False):
+                 min_rating: Optional[str] = None, sbd_only: Optional[bool] = True):
         self.search_term = search_term
         self.venue = venue
         self.start_year = start_year
@@ -36,12 +36,15 @@ class SearchTermsModel:
         return query
 
 
-def perform_archive_search(search_terms: SearchTermsModel):
+def perform_archive_search(search_terms: SearchTermsModel) -> List[Dict[str, str]]:
     """
     Performs a search in the Internet Archive based on given search terms.
 
     Args:
         search_terms (SearchTermsModel): The parameters to use for the search.
+
+    Returns:
+        List[Dict[str, str]]: A list of dictionaries containing search result metadata.
     """
     # Convert the search terms to the proper query format
     query = search_terms.to_query()
@@ -53,23 +56,31 @@ def perform_archive_search(search_terms: SearchTermsModel):
     # Search the Internet Archive using the internetarchive package
     results = internetarchive.search_items(query, fields=fields)
 
-    # Print some details about the results
+    # Collect search results to return
+    results_list = []
     print(f"\nFound {results.num_found} results:\n")
     for item in results:
         # Extract fields with default values if they are missing
-        identifier = item.get('identifier', 'No identifier available')
-        title = item.get('title', 'No title available')
-        date = item.get('date', 'No date available')
-        venue = item.get('venue', 'No venue available')
-        rating = item.get('avg_rating', 'No rating available')
+        result = {
+            "identifier": item.get('identifier', 'No identifier available'),
+            "title": item.get('title', 'No title available'),
+            "date": item.get('date', 'No date available'),
+            "venue": item.get('venue', 'No venue available'),
+            "avg_rating": item.get('avg_rating', 'No rating available')
+        }
 
-        # Format and display details for each result
-        print(f"Identifier: {identifier}")
-        print(f"Title: {title}")
-        print(f"Date: {date}")
-        print(f"Venue: {venue}")
-        print(f"Rating: {rating}")
+        # Append to results list
+        results_list.append(result)
+
+        # Print details
+        print(f"Identifier: {result['identifier']}")
+        print(f"Title: {result['title']}")
+        print(f"Date: {result['date']}")
+        print(f"Venue: {result['venue']}")
+        print(f"Rating: {result['avg_rating']}")
         print("-" * 40)
+
+    return results_list
 
 
 # Example Usage
