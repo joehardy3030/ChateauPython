@@ -5,19 +5,26 @@ from typing import Optional, List, Dict
 class SearchTermsModel:
     def __init__(self, search_term: Optional[str] = None, venue: Optional[str] = None,
                  start_year: Optional[str] = None, end_year: Optional[str] = None,
-                 min_rating: Optional[str] = None, sbd_only: Optional[bool] = True):
+                 min_rating: Optional[str] = None, num_reviews: Optional[int] = 0,
+                 sbd_only: Optional[bool] = True, collection: Optional[str] = "GratefulDead AND stream_only"):
         self.search_term = search_term
         self.venue = venue
         self.start_year = start_year
         self.end_year = end_year
         self.min_rating = min_rating
+        self.num_reviews = num_reviews
         self.sbd_only = sbd_only
+        self.collection = collection
 
     def to_query(self) -> str:
         """
         Converts the model to an Internet Archive query string.
         """
-        query = 'collection:(GratefulDead AND stream_only)' if self.sbd_only else 'collection:(GratefulDead)'
+        if self.collection:
+            query = f'collection:({self.collection})'
+        else:
+            # Fallback default collection
+            query = 'collection:(GratefulDead AND stream_only)' if self.sbd_only else 'collection:(GratefulDead)'
 
         if self.search_term:
             query += f' AND "{self.search_term}"'
@@ -32,6 +39,9 @@ class SearchTermsModel:
 
         if self.min_rating:
             query += f' AND avg_rating:[{self.min_rating} TO 5.0]'
+
+        if self.num_reviews:
+            query += f' AND num_reviews:[{self.num_reviews} TO *]'
 
         return query
 
