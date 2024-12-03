@@ -51,7 +51,9 @@ def perform_archive_search(search_terms: SearchTermsModel) -> List[Dict[str, str
     print(f"Performing search with query: {query}")
 
     # Request specific fields in the API call
-    fields = ["identifier", "title", "date", "venue", "avg_rating", "num_reviews"]
+    fields = ["identifier", "title", "date", "venue",
+              "coverage", "transferer", "avg_rating",
+              "num_reviews", "source"]
 
     # Search the Internet Archive using the internetarchive package
     results = internetarchive.search_items(query, fields=fields)
@@ -66,8 +68,11 @@ def perform_archive_search(search_terms: SearchTermsModel) -> List[Dict[str, str
             "title": item.get('title', 'No title available'),
             "date": item.get('date', 'No date available'),
             "venue": item.get('venue', 'No venue available'),
+            "coverage":item.get('coverage', 'No coverage available'),
+            "transferer": item.get('transferer', 'No transferer available'),
             "avg_rating": item.get('avg_rating', 'No rating available'),
-            "num_reviews": item.get('num_reviews', 'No reviews available')
+            "num_reviews": item.get('num_reviews', 'No reviews available'),
+            "source": item.get('source', 'No source available')
         }
 
         # Append to results list
@@ -78,6 +83,9 @@ def perform_archive_search(search_terms: SearchTermsModel) -> List[Dict[str, str
         print(f"Title: {result['title']}")
         print(f"Date: {result['date']}")
         print(f"Venue: {result['venue']}")
+        print(f"Location: {result['coverage']}")
+        print(f"Transferer: {result['transferer']}")
+        print(f"Source: {result['source']}")
         print(f"Rating: {result['avg_rating']}")
         print(f"Number of ratings: {result['num_reviews']}")
         print("-" * 40)
