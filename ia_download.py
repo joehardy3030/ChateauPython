@@ -4,19 +4,21 @@ from typing import Optional
 import os
 
 
-def download_show(id, target_dir: Optional[str] = None):
+def download_show(id, target_folder: Optional[str] = None):
     """
     Downloads an item from the Internet Archive using the identifier.
 
     Args:
         id (str): The identifier of the Internet Archive item to download.
-        target_dir (str): The directory where the downloaded files should be saved.
+        target_folder (str): The folder where the downloaded files should be saved.
                                           Defaults to '~/Music/Grateful Dead'.
     """
     # Set default target directory to 'Music/Grateful Dead' under user's home directory
-    if target_dir is None:
-        home_directory = Path.home()  # Gets the user's home directory, e.g., '/Users/username'
+    home_directory = Path.home()  # Gets the user's home directory, e.g., '/Users/username'
+    if target_folder is None:
         target_dir = home_directory / "Music" / "Grateful Dead"
+    else:
+        target_dir = home_directory / "Music" / target_folder
 
     # Ensure the target directory exists
     os.makedirs(target_dir, exist_ok=True)

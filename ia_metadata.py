@@ -9,7 +9,7 @@ class ShowMetadata:
                  description: Optional[str] = None, date: Optional[str] = None,
                  year: Optional[str] = None, venue: Optional[str] = None,
                  transferer: Optional[str] = None, source: Optional[str] = None,
-                 coverage: Optional[str] = None):
+                 coverage: Optional[str] = None, notes: Optional[str] = None):
         self.identifier = identifier
         self.title = title
         self.creator = creator
@@ -23,6 +23,7 @@ class ShowMetadata:
         self.transferer = transferer
         self.source = source
         self.coverage = coverage
+        self.notes = notes
 
     @classmethod
     def from_identifier(cls, identifier: str):
@@ -59,7 +60,8 @@ class ShowMetadata:
                 venue=metadata.get('venue'),
                 transferer=metadata.get('transferer'),
                 source=metadata.get('source'),
-                coverage=metadata.get('coverage')
+                coverage=metadata.get('coverage'),
+                notes=metadata.get('notes')
             )
         except requests.RequestException as e:
             print(f"Failed to fetch metadata for identifier '{identifier}': {e}")
@@ -83,6 +85,7 @@ class ShowMetadata:
             f"Transferer: {self.transferer}\n"
             f"Source: {self.source}\n"
             f"Coverage: {self.coverage}\n"
+            f"Notes: {self.notes}\n"
         )
 
 
