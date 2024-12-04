@@ -5,7 +5,7 @@ from typing import Optional, List, Dict
 class SearchTermsModel:
     def __init__(self, search_term: Optional[str] = None, venue: Optional[str] = None,
                  start_year: Optional[str] = None, end_year: Optional[str] = None,
-                 min_rating: Optional[str] = None, num_reviews: Optional[int] = 0,
+                 min_rating: Optional[str] = None, num_reviews: Optional[str] = None,
                  sbd_only: Optional[bool] = True, collection: Optional[str] = "GratefulDead AND stream_only"):
         self.search_term = search_term
         self.venue = venue
@@ -41,7 +41,7 @@ class SearchTermsModel:
             query += f' AND avg_rating:[{self.min_rating} TO 5.0]'
 
         if self.num_reviews:
-            query += f' AND num_reviews:[{self.num_reviews} TO *]'
+            query += f' AND num_reviews:[{self.num_reviews} TO 10000]'
 
         return query
 
