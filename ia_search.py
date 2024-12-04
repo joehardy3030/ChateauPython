@@ -6,13 +6,15 @@ class SearchTermsModel:
     def __init__(self, search_term: Optional[str] = None, venue: Optional[str] = None,
                  start_year: Optional[str] = None, end_year: Optional[str] = None,
                  min_rating: Optional[str] = None, num_reviews: Optional[str] = None,
-                 sbd_only: Optional[bool] = True, collection: Optional[str] = "GratefulDead AND stream_only"):
+                 transferer: Optional[str] = None, sbd_only: Optional[bool] = True,
+                 collection: Optional[str] = "GratefulDead AND stream_only"):
         self.search_term = search_term
         self.venue = venue
         self.start_year = start_year
         self.end_year = end_year
         self.min_rating = min_rating
         self.num_reviews = num_reviews
+        self.transferer = transferer
         self.sbd_only = sbd_only
         self.collection = collection
 
@@ -42,6 +44,9 @@ class SearchTermsModel:
 
         if self.num_reviews:
             query += f' AND num_reviews:[{self.num_reviews} TO 10000]'
+
+        if self.transferer:
+            query += f' AND transferer:"{self.transferer}"'
 
         return query
 
