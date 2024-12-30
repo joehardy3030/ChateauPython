@@ -1,22 +1,26 @@
 import os
 import requests
+from pathlib import Path
+from typing import Optional
 from typing import List
 
 
 class ImageDownloader:
-
+    
     @staticmethod
-    def download_images_from_identifier(identifier: str, target_directory: str = "downloads"):
+    def download_images_from_identifier(identifier: str, target_folder: Optional[str] = None):
         """
         Downloads all image files (e.g., .jpg, .png) associated with an Internet Archive identifier.
 
         Args:
             identifier (str): The identifier of the Internet Archive item.
-            target_directory (str): The directory where images will be downloaded.
+            target_folder (str): Optional. The directory where images will be downloaded.
         """
-        # Create the target directory if it doesn't exist
-        if not os.path.exists(target_directory):
-            os.makedirs(target_directory)
+        home_directory = Path.home()  # Gets the user's home directory, e.g., '/Users/username'
+        if target_folder is None:
+            target_dir = home_directory / "Music" / "Grateful Dead"
+        else:
+            target_dir = home_directory / "Music" / target_folder
 
         # Metadata URL to get all file details
         metadata_url = f"https://archive.org/metadata/{identifier}"
@@ -40,7 +44,7 @@ class ImageDownloader:
                 download_url = f"https://archive.org/download/{identifier}/{file_name}"
 
                 # Determine the local path for saving
-                local_path = os.path.join(target_directory, file_name)
+                local_path = os.path.join(target_dir, file_name)
 
                 # Download and save the image file
                 print(f"Downloading {file_name}...")
